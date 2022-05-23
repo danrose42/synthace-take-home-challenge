@@ -23,7 +23,7 @@ const buildTree = () => {
             for (let i = 0; i < splitPath.length; i++) {
                 if (i === 0 || splitPath[i + 1]) {
                     splitPath[i] = splitPath[i] + "/";
-                }
+                };
             };
 
             splitFiles.push(splitPath);
@@ -33,11 +33,22 @@ const buildTree = () => {
             };
         };
 
-        // for (let i = maxPath - 1; i > 0; i--) {
-        // sortArray(splitFiles, i);
-        // };
-
-        sortArray(splitFiles);
+        splitFiles.sort((a, b) => {
+            const sortAllColumns = (colIndex) => {
+                const x = a[colIndex];
+                const y = b[colIndex];
+                if (!x && !y) {
+                    return 0;
+                } else if (x < y || !x) {
+                    return -1;
+                } else if (x > y || !y) {
+                    return 1;
+                } else {
+                    return sortAllColumns(colIndex + 1);
+                };
+            };
+            return sortAllColumns(0);
+        });
 
         let fileNum = 0;
         let splitFilesLen = splitFiles.length - 1;
@@ -58,8 +69,6 @@ const buildTree = () => {
                 fileNum++;
             };
         };
-
-        console.log(splitFiles);
 
         const output = document.getElementById("output");
         if (output) {
@@ -100,49 +109,3 @@ const buildTree = () => {
         };
     };
 };
-
-// const sortArray = (array, column) => {
-//     array.sort(sortFunction);
-
-//     function sortFunction(a, b) {
-//         if (a[column] === b[column]) {
-//             return 0;
-//         } else {
-//             return (a[column] < b[column]) ? -1 : 1;
-//         };
-//     };
-// };
-
-function sortFunction(a, b) {
-    if (a[column] === b[column]) {
-        if (a[column + 1] && b[column + 1]) {
-            return sortArray(array, column + 1);
-        } else if (a[column + 1]) {
-            return -1;
-        } else if (b[column + 1]) {
-            return 1;
-        } else {
-            return 0;
-        };
-
-    } else {
-        return (a[column] > b[column]) ? 1 : -1;
-    };
-
-};
-
-// If owner names differ, sort by them. Otherwise, use publication name for tiebreaker.
-
-// function mysortfunction(a, b) {
-
-//   var o1 = a[3].toLowerCase();
-//   var o2 = b[3].toLowerCase();
-
-//   var p1 = a[1].toLowerCase();
-//   var p2 = b[1].toLowerCase();
-
-//   if (o1 < o2) return -1;
-//   if (o1 > o2) return 1;
-//   if (p1 < p2) return -1;
-//   if (p1 > p2) return 1;
-//   return 0;

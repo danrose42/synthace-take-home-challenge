@@ -14,15 +14,6 @@ body {
 .section {
     width: 50%;
     height: 100%;
-    /* margin: 16px; */
-}
-
-.file-list {
-    background-color: red;
-}
-
-.tree {
-    background-color: green;
 }
 
 .item {
