@@ -75,6 +75,8 @@ h1 {
     display: grid;
     text-align: center;
     overflow: auto;
+    align-content: start;
+    justify-content: start;
 }
 
 .branch {
@@ -92,7 +94,7 @@ h1 {
     padding: 12px;
 }
 
-.blank-branch {
+.blank {
     background-color: white;
 }
 
