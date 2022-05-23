@@ -43,6 +43,7 @@ h1 {
 .text {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    color: black;
 }
 
 .content {
@@ -71,6 +72,28 @@ h1 {
     border-style: solid;
     border-color: lightgrey;
     border-width: 2px;
+    display: grid;
+    text-align: center;
+    overflow: auto;
+}
+
+.branch {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background-color: #21a670;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.blank-branch {
+    background-color: white;
 }
 
 @media only screen and (max-width: 1024px) {

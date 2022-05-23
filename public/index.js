@@ -38,26 +38,47 @@ const buildTree = () => {
         };
 
         let fileNum = 0;
-        let splitFilesLength = splitFiles.length - 1;
-        while (fileNum < splitFilesLength) {
+        let splitFilesLen = splitFiles.length - 1;
+        while (fileNum < splitFilesLen) {
             const a = splitFiles[fileNum].toString().replace(/\/$/, "");
             const b = splitFiles[fileNum + 1].toString().replace(/\/$/, "");
 
             if (a === b) {
                 splitFiles.splice(fileNum, 1);
-                splitFilesLength = splitFilesLength - 1;
+                splitFilesLen = splitFilesLen - 1;
             } else if (a.length < b.length && a === b.substring(0, a.length)) {
                 splitFiles.splice(fileNum, 1);
-                splitFilesLength = splitFilesLength - 1;
+                splitFilesLen = splitFilesLen - 1;
             } else if (a.length > b.length && a.substring(0, b.length) === b) {
                 splitFiles.splice(fileNum + 1, 1);
-                splitFilesLength = splitFilesLength - 1;
+                splitFilesLen = splitFilesLen - 1;
             } else {
                 fileNum++;
             };
         };
 
         console.log(splitFiles);
+
+        const output = document.getElementById("output");
+        if (output) {
+            while (output.firstChild) {
+                output.removeChild(output.firstChild);
+            };
+
+            for (i = 0; i < splitFiles.length; i++) {
+                for (j = 0; j < maxPath; j++) {
+                    let node = document.createElement("div");
+                    node.className = "branch";
+                    node.style.cssText = "grid-row: " + (i + 1) + " / span 1";
+                    if (splitFiles[i][j]) {
+                        node.innerHTML = splitFiles[i][j];
+                    } else {
+                        node.classList.add("blank-branch");
+                    };
+                    output.appendChild(node);
+                };
+            };
+        };
     };
 };
 
