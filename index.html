@@ -10,23 +10,23 @@
 
 <body>
     <div class="container">
-        <div class="section" id="file-list">
+        <div class="section file-list">
             <div class="item">
                 <h1 class="text">File List</h1>
                 <textarea class="content text" id="input"></textarea>
-                <button class="text" id="build-tree">
+                <button class="text" id="build" onClick="buildTree()">
                     Build tree
                 </button>
             </div>
         </div>
-        <div class="section" id="tree">
+        <div class="section tree">
             <div class="item">
                 <h1 class="text">Tree</h1>
                 <div class="content" id="output"></div>
             </div>
         </div>
     </div>
-    <script type="module" src="/public/index.js"></script>
+    <script src="/public/index.js"></script>
 </body>
 
 </html>

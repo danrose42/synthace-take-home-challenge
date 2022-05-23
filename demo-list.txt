@@ -1,0 +1,16 @@
+/home/grannyweatherwax/broom
+/home/rincewind/grimoires/world-creation.spell
+/home/grannyweatherwax/cauldron
+/home/vimes/gear/cigarbox/cigar
+/home/vimes/gear/breastplate
+/home
+home
+/home/vimes/gear/sword
+/home/rincewind/hat/wizzard.hat
+/home/grannyweatherwax/signs/isaintnt-dead.txt
+/
+
+/home/grannyweatherwax/cottage/privy/house.key
+/home/grannyweatherwax/hatpin
+/home/vimes/gear/helmet
+/home/vimes/gear/helmet////sho!vel/

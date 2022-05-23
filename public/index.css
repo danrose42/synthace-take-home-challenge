@@ -17,11 +17,11 @@ body {
     /* margin: 16px; */
 }
 
-#file-list {
+.file-list {
     background-color: red;
 }
 
-#tree {
+.tree {
     background-color: green;
 }
 
@@ -53,9 +53,12 @@ h1 {
 
 #input {
     font-size: 16px;
+    resize: none;
+    white-space: pre;
+    overflow-wrap: normal;
 }
 
-#build-tree {
+#build {
     width: 100%;
     height: 82px;
     margin-top: 12px;
@@ -65,9 +68,12 @@ h1 {
 
 #output {
     background-color: white;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 2px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .container {
         width: 100%;
         height: 100%;
