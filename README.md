@@ -1,7 +1,7 @@
 ### App files:
 - index.html
 - index.css
-- index.js
+- index.js (majority of comments in this file)
 
 ### To run:
 Ensure all three above files are in the same folder and open index.html in Chrome or Firefox.
