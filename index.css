@@ -45,12 +45,14 @@ h1 {
 
 #input {
     font-size: 16px;
-    resize: none;
-    white-space: pre;
+
+    /* Add scroll bars if necessary instead of wrapping text or resizing */
     overflow-wrap: normal;
+    white-space: pre;
+    resize: none;
 }
 
-#build {
+.build {
     width: 100%;
     height: 82px;
     margin-top: 12px;
@@ -63,11 +65,15 @@ h1 {
     border-style: solid;
     border-color: lightgrey;
     border-width: 2px;
+
+    /* We use a CSS grid to display the output tree */
     display: grid;
     text-align: center;
-    overflow: auto;
     align-content: start;
     justify-content: start;
+
+    /* Add scroll bars if necessary instead of overflowing */
+    overflow: auto;
 }
 
 .branch {
@@ -89,6 +95,7 @@ h1 {
     background-color: white;
 }
 
+/* Align output below input on small laptop screens or smaller for readability */
 @media only screen and (max-width: 1024px) {
     .container {
         width: 100%;
